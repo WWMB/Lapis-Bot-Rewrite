@@ -17,3 +17,8 @@ You won't really have a use for this unless you're on my Discord server, as its 
 
 ### Contributing
 If you're feeling kind and you see a bug or issue that you can fix, feel free to make modifications and submit a pull request!
+
+### Focus of this branch
+* Obtaining functional saving and loading of the data files for the bot while using discord.py's task system, all the while fixing and improving old code.
+* The file setup.py may be changed with this branch, as saveload.py and setup.py are closely related.
+* Once these are achieved, it will be merged back into the master branch.

@@ -16,16 +16,22 @@ class Events(commands.Cog):
     def cog_unload(self):
         self.run.cancel()
 
+    # 0. Order of operations:
+    # 1. Load necessary data into objects, this includes the channel id, the eventdata, and the currentdate
+    # 2. Process each line of eventdata loaded. Splits each line into two items stored in a 'temp' list
+    # 3. Test each iteration of temp data against the currentdate, if it finds a match send the message.
     @tasks.loop(seconds=5.0)
     async def run(self): #checks if the time matches, and posts an event reminder if so
         if(self.debug == True and core.vars.debug == True):
             print("Events: 1b: "+str(self.b))
+        #1.
         channel = self.bot.get_channel(core.vars.channel_announcements) #creates channel object linked to announcement channel.
         currentdate = core.vars.currentdate #currentdate = DAY, TIME
         eventdata = core.saveload.eventdata #list of events loaded from events.cfg in saveload.py
         self.i = 1
         if(self.debug == True and core.vars.debug == True):
             print("-------"+str(1)+"-------")
+        #2.
         for data in eventdata: #compares the current time with the event times loaded
             self.i = self.i + 1
             if(self.i > len(eventdata)): #keeps 'i' from exceeding the amount of events
@@ -37,6 +43,7 @@ class Events(commands.Cog):
                 print("Events: Time: "+time)
                 print("Events: Message: "+message)
                 print("Events: Testing "+time+" against the current time, "+currentdate)
+            #3.
             if(currentdate == time and self.b == 0): #if the time matches the currentdate, send the message if it hasn't already
                 if(self.debug == True and core.vars.debug == True):
                     print("Events: 2b: "+str(self.b))

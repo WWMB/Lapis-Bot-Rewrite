@@ -1,7 +1,7 @@
 import os
 import json
 import time
-
+#For activity tracking
 def newtemp(date):
     newtimevars = {}
     newtimevars['times'] = []

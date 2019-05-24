@@ -9,17 +9,17 @@ import core.vars
 logging.basicConfig(level=logging.ERROR)
 
 bot = commands.Bot(command_prefix='+', description='Various things Valdrea needs')
-cogs = ['cogs.timer', 'cogs.events']
-gsl = core.saveload.Global() #Global saving/loading class
+cogs = ['cogs.timer', 'cogs.events', 'cogs.saveload']
+#gsl = core.saveload.Global() #Global saving/loading class
 gset = core.setup.Global() #Global setup class
 
-try:
-    gsl.load()
-    gsl.eventload()
-except IOError:
-    gset.setup()
-    gsl.load()
-    gsl.eventload()
+#try:
+#    gsl.load()
+#    gsl.eventload()
+#except IOError:
+gset.setup()
+#    gsl.load()
+#    gsl.eventload()
 
 if __name__ == '__main__':
     for cog in cogs:
