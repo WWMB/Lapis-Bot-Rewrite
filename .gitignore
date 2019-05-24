@@ -1,4 +1,7 @@
+# ignore the compiled code
 __pycache__/*
 __pycache__/
 *.py[cod]
+
+# ignore the private settings
 core/values/bot.yaml

@@ -3,7 +3,6 @@ eventdata = "blank"
 currentdate = "blank" #contains timestamp with day
 currenttime = "blank" #contains timestamp
 predefinedChannels = [] #will contain the predefined channels when they are loaded from the settings
-#need to figure out how to use .env instead, as these values really should be hidden.
 
 #activity vars
 total = 0

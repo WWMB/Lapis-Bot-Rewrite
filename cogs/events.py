@@ -25,7 +25,7 @@ class Events(commands.Cog):
         if(self.debug == True and core.vars.debug == True):
             print("Events: 1b: "+str(self.b))
         #1.
-        channel = self.bot.get_channel(vars.predefinedChannels['testing']) #creates channel object linked to announcement channel.
+        channel = self.bot.get_channel(vars.predefinedChannels['announcements']) #creates channel object linked to announcement channel.
         currentdate = core.vars.currentdate #currentdate = DAY, TIME
         eventdata = core.saveload.eventdata #list of events loaded from events.cfg in saveload.py
         self.i = 1

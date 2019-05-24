@@ -40,7 +40,7 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as {0.user}".format(bot))
-    channel = bot.get_channel(core.vars.predefinedChannels['testing'])
+    channel = bot.get_channel(core.vars.predefinedChannels['announcements'])
     if(core.vars.debug == False):
         await channel.send("It's Lapis.")
 
