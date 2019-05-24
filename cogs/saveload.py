@@ -21,7 +21,8 @@ class SaveLoad(commands.Cog):
     #doing this just feels clunky
     @tasks.loop(seconds=1,count=1)
     async def load(self):
-        currentdate
+        print("~~~loading~~~")
+        print(core.vars.currentdate)
         if(core.vars.debug == True and self.debug == True):
             print("SaveLoad: Message Successful")
         dir = os.getcwd()

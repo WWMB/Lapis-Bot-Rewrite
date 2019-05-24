@@ -1,4 +1,8 @@
+import core.debug
+
+debugLevel = core.debug.debugLevels["debug"]
 debug = True #global debug variable, required to debug operations on the bot
+
 eventdata = "blank"
 currentdate = "blank" #contains timestamp with day
 currenttime = "blank" #contains timestamp
