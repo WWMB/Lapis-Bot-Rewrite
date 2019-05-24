@@ -5,12 +5,24 @@ import os
 import core.setup
 import core.saveload
 import core.vars
+import yaml #pyyaml
 
 logging.basicConfig(level=logging.ERROR)
 
+with open(os.path.join(os.getcwd(),'core','values','bot.yaml')) as stream:
+    try:
+        botYaml = yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
+
+
+print(channels)
+print(channels['testing'])
+vars.predefinedChannels = botYaml['channels']
+
 bot = commands.Bot(command_prefix='+', description='Various things Valdrea needs')
 cogs = ['cogs.timer', 'cogs.events', 'cogs.saveload']
-#gsl = core.saveload.Global() #Global saving/loading class
+gsl = core.saveload.Global() #Global saving/loading class
 gset = core.setup.Global() #Global setup class
 
 #try:
@@ -30,7 +42,7 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as {0.user}".format(bot))
-    channel = bot.get_channel(547799429072027649)
+    channel = bot.get_channel(vars.predefinedChannels['testing'])
     if(core.vars.debug == False):
         await channel.send("It's Lapis.")
 

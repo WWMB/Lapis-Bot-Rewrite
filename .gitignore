@@ -1,4 +1,4 @@
 __pycache__/*
 __pycache__/
 *.py[cod]
-./core/values/bot.env
+core/values/bot.yaml
