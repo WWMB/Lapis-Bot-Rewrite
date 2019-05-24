@@ -16,9 +16,7 @@ with open(os.path.join(os.getcwd(),'core','values','bot.yaml')) as stream:
         print(exc)
 
 
-print(channels)
-print(channels['testing'])
-vars.predefinedChannels = botYaml['channels']
+core.vars.predefinedChannels = botYaml['channels']
 
 bot = commands.Bot(command_prefix='+', description='Various things Valdrea needs')
 cogs = ['cogs.timer', 'cogs.events', 'cogs.saveload']
@@ -42,7 +40,7 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print("Logged in as {0.user}".format(bot))
-    channel = bot.get_channel(vars.predefinedChannels['testing'])
+    channel = bot.get_channel(core.vars.predefinedChannels['testing'])
     if(core.vars.debug == False):
         await channel.send("It's Lapis.")
 

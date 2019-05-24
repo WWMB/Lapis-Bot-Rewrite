@@ -2,9 +2,7 @@ debug = True #global debug variable, required to debug operations on the bot
 eventdata = "blank"
 currentdate = "blank" #contains timestamp with day
 currenttime = "blank" #contains timestamp
-channel_announcements = 533473243768684584
-channel_testing = 547799429072027649
-channel_private = 566836559039430668 #if you have a private testing server, place your channel testing id here
+predefinedChannels = [] #will contain the predefined channels when they are loaded from the settings
 #need to figure out how to use .env instead, as these values really should be hidden.
 
 #activity vars
